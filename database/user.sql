@@ -19,7 +19,9 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `reunion_island`
 --
+CREATE DATABASE reunion_island CHARACTER SET 'utf8';
 
+USE reunion_island;
 -- --------------------------------------------------------
 
 --
@@ -39,3 +41,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+--
+-- Ajout des login,mdp de la table `user`
+--
+
+INSERT INTO `user` (`username`, `password`) VALUES ('capitaine', 'haddock'), ('jean', 'dupont'), ('titi', 'grosminet');
