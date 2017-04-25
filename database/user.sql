@@ -19,15 +19,16 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `reunion_island`
 --
-CREATE DATABASE reunion_island CHARACTER SET 'utf8';
+CREATE DATABASE IF NOT EXISTS `reunion_island` CHARACTER SET 'utf8';
 
-USE reunion_island;
+USE `reunion_island`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
@@ -47,4 +48,5 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Ajout des login,mdp de la table `user`
 --
 
-INSERT INTO `user` (`username`, `password`) VALUES ('capitaine', 'haddock'), ('jean', 'dupont'), ('titi', 'grosminet');
+INSERT INTO `user` (`username`, `password`)
+VALUES ('capitaine', SHA1('haddock')), ('jean', SHA1('dupont')), ('titi', SHA1('grosminet'));
