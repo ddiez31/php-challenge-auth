@@ -4,8 +4,8 @@ require_once 'vendor/j4mie/idiorm/idiorm.php';
 
 session_start();
 
-$user = 'root';
-$pass = '070401';
+$user = '****';
+$pass = '****';
 
 ORM::configure(array(
     'connection_string' => 'mysql:host=localhost;dbname=reunion_island',
